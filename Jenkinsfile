@@ -1,19 +1,17 @@
 node {
-
   stage ('checkout code from git hub') {
-
-    git 'https://github.com/NishadParekh/cypress-task.git'
-
+    git branch: 'master', url: 'https://github.com/NishadParekh/cypress-task.git'
   }
-
-  
-
-  stage('install cypress') {
-
+  stage ('install node js') {
    
-
-    sh "npm install --save -include=dev cypress"
-
-    sh "NO_COLOR=1 npx cypress run "
-
+    sh "apt install nodejs -y"
+    sh "apt install npm -y"
+    sh "npm init -y"
+   }
+  stage('intall cypress') {
+    sh "npm install --save -dev cypress"
+    sh "apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y"
+    sh " NO_COLOR=1 npx cypress run"
+    
   }
+}
