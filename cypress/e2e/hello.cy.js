@@ -2,11 +2,10 @@ describe('JustGitHub', function () {
   
     it("DummyLogin",function ()  {
       
-        cy.visit("https://practicetestautomation.com/practice-test-login/")
- 
-        cy.get('#username').should('be.visible').type("student");
-        cy.get('#password').should('be.visible').type('Password123');
-        cy.get("#submit").click();
+        cy.visit("https://www.stealmylogin.com/demo.html")
+    /*cy.get('#user-name').type('ishita.popat@ecosmob.com')
+    cy.get('#user-password').type('Test@123')
+    cy.get('.btn').click()*/
     })
 
 })
